@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KĻUS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form form-1">
+            <div class="left-panel">
+                <h1>Esi sveicināts KĻUS</h1>
+                <p>Tavas laboratorijas uzskaites sistēma</p>
+                <img src="lab_image.png" alt="Lab Illustration">
+            </div>
+            <div class="right-panel">
+                <h2>Ko Tu vēlies darīt šodien?</h2>
+                <button onclick="showForm(2)">Pieslēgties</button>
+                <button onclick="showForm(3)">Pieķūt publiskajiem datiem</button>
+            </div>
+        </div>
+        <div class="form form-2" style="display: none;">
+            <div class="left-panel">
+                <h1>Esi sveicināts KĻUS</h1>
+                <p>Tavas laboratorijas uzskaites sistēma</p>
+                <img src="lab_image.png" alt="Lab Illustration">
+            </div>
+            <div class="right-panel">
+                <h2>Pieslēgties ķīmijas laboratorijas uzskaites sistēmai</h2>
+                <form onsubmit="return login(event)">
+                    <label for="username">Lietotājvārds:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Parole:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Pieslēgties</button>
+                </form>
+                <p>Neesi vēl reģistrēts? <a href="#">Izveidot profilu</a></p>
+            </div>
+        </div>
+        <div class="form form-3" style="display: none;">
+            <h2>Publiskā datubāze</h2>
+            <input type="text" id="search" placeholder="Search" onkeyup="filterTable()">
+            <button onclick="filterTable('all')">Rādīt visu</button>
+            <button onclick="filterTable('vielas')">Rādīt vielas</button>
+            <button onclick="filterTable('aprīkojumu')">Rādīt aprīkojumu</button>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nosaukums</th>
+                        <th>Tips</th>
+                        <th>Apakstips</th>
+                        <th>Skaits</th>
+                        <th>Daudzums</th>
+                        <th>Mērvienības</th>
+                        <th>Komentāri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
